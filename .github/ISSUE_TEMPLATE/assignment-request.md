@@ -2,7 +2,7 @@
 name: Assignment request
 about: assignment issue template
 title: ''
-labels: "✨ 기본 과제, \U0001F340 생각 과제, \U0001F525 도전 과제"
+labels: "✨ 기본 과제, \U0001F340 생각 과제, \U0001F525 심화 과제"
 assignees: yeseul106
 
 ---
@@ -27,5 +27,5 @@ assignees: yeseul106
 ## ✅ To Do List
 
 - [ ] **Todo 1.** 기본 과제 하기
-- [ ] **Todo 2.** 도전 과제 하기
+- [ ] **Todo 2.** 심화 과제 하기
 - [ ] **Todo 3.** 생각 과제 하기
