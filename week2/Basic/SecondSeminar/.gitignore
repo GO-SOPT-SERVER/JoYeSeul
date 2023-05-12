@@ -33,5 +33,7 @@ out/
 /nbdist/
 /.nb-gradle/
 
-### application.yml ###
-application.yaml
+### VS Code ###
+.vscode/
+
+.DS_Store
