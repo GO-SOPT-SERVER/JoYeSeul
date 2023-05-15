@@ -171,4 +171,4 @@ gradle-app.setting
 
 .DS_Store
 
-.idea
+.idea/
