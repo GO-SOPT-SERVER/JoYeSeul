@@ -1,19 +1,18 @@
 package sopt.org.SixthSeminar.controller.dto.request;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BoardRequestDto {
+public class BoardFileListDto {
 
     @NotBlank
     private String title;
@@ -25,5 +24,5 @@ public class BoardRequestDto {
     private Boolean isPublic;
 
     @NotNull
-    private MultipartFile thumbnail;
+    private List<MultipartFile> imageList;
 }

@@ -1,6 +1,7 @@
 package sopt.org.SixthSeminar.domain;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import sopt.org.SixthSeminar.common.domain.AuditingTimeEntity;
@@ -12,7 +13,6 @@ import java.util.List;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-
 public class Board extends AuditingTimeEntity {
 
     @Id
@@ -23,6 +23,9 @@ public class Board extends AuditingTimeEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column
+    private String thumbnail;
+
     @Column(nullable = false)
     private String title;
 
@@ -32,14 +35,17 @@ public class Board extends AuditingTimeEntity {
     @Column(nullable = false)
     private Boolean isPublic;
 
-    private Board(User user, String title, String content, Boolean isPublic) {
+    @OneToMany(mappedBy = "board")
+    private List<BoardImage> boardImageList = new ArrayList<>();
+
+    @Builder
+    private Board(User user, String title, String content, Boolean isPublic, String thumbnail) {
         this.user = user;
         this.title =title;
         this.content = content;
         this.isPublic = isPublic;
+        this.thumbnail = thumbnail;
     }
 
-    public static Board newInstance(User user, String title, String content, Boolean isPublic) {
-        return new Board(user, title, content, isPublic);
-    }
+    public void addBoardImage(BoardImage boardImage) { this.boardImageList.add(boardImage); }
 }
